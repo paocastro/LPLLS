@@ -279,7 +279,7 @@
 
     <section id="Eventos" class="event-section bg-grey padding">
         <div class="container" ng-controller="ctrlEventos">
-            <div class="section-heading mb-40 text-center">
+            <div class="section-heading mb-40 text-center" ng-If="eventos != ''">
                 <h2>Proximos eventos</h2>
                 <!-- <p>Lorem Ipsum is simply dummy text of the printing and industry.</p> -->
             </div>
@@ -292,17 +292,17 @@
                                 </span></h2>
                         </div>
                         <div class="ticket-btn">
-                            <a href="#" class="default-btn">{{x.titulo}}</a>
+                            <a href="#" class="default-btn">{{x.Titulo}}</a>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="event-details">
-                            <h2><a href="#">{{x.titulo}}</a></h2>
+                            <h2><a href="#">{{x.Titulo}}</a></h2>
                             <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>8:00 AM - 2:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>{{x.ubicacion}}</li>
+                                <li><i class="fa fa-clock-o"></i>{{getHora(x.FechaInicio)}} - {{getHora(x.FechaFin)}}</li>
+                                <li><i class="fa fa-map-marker"></i>{{x.Ubicacion}}</li>
                             </ul>
-                            <p>{{x.descripcion}}</p>
+                            <p>{{x.Descripcion}}</p>
                         </div>
                     </div>
                     <div class="col-lg-3">
